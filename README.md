@@ -1,4 +1,4 @@
-# labreque_philippe-tp3_godot
+# labreque_philippe-tp2_godot
 
 ### TP2 du cours `` "Interactive-Ludique" `` 
 
