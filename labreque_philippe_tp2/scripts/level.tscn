@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://dqdpkdp07rjyr"]
+[gd_scene load_steps=8 format=4 uid="uid://dqdpkdp07rjyr"]
 
 [ext_resource type="Texture2D" uid="uid://boy6h00ki1aew" path="res://assets/main_lev_build.png" id="1_b5tok"]
 [ext_resource type="PackedScene" uid="uid://bs0nvruulqy8b" path="res://scripts/player.tscn" id="2_udnaf"]
@@ -1799,6 +1799,16 @@ texture = ExtResource("1_b5tok")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_04hsl")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_04hsl"]
+size = Vector2(1153, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5tok"]
+size = Vector2(143.5, 32)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_o3n3m"]
+a = Vector2(577.5, -49)
+b = Vector2(544.5, -18)
+
 [node name="level" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1810,3 +1820,18 @@ tile_set = SubResource("TileSet_o3n3m")
 
 [node name="Player" parent="." instance=ExtResource("2_udnaf")]
 position = Vector2(575, 285)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(575, 285)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 341)
+shape = SubResource("RectangleShape2D_04hsl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(25, 179)
+shape = SubResource("RectangleShape2D_b5tok")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 341)
+shape = SubResource("SegmentShape2D_o3n3m")

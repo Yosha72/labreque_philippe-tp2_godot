@@ -17,11 +17,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 	else:
 		# Si on touche le sol et qu'on appuie sur saut
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("fly"):
 			velocity.y = -jump_force
 
 	# Déplacement horizontal
-	var direction = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	var direction = Input.get_action_strength("right") - Input.get_action_strength("left")
 	velocity.x = direction * move_speed
 
 	# Appliquer le mouvement

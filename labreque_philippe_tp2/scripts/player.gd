@@ -10,10 +10,10 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("fly"):
 			velocity.y = -jump_force
 
-	var direction = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	var direction = Input.get_action_strength("right") - Input.get_action_strength("left")
 	velocity.x = direction * move_speed
 
 	move_and_slide()
@@ -30,3 +30,6 @@ func _update_animation(direction: float) -> void:
 
 	if direction != 0:
 		sprite.flip_h = direction < 0
+		
+		# Exemple : système joueur/ennemis/objets
+# Couche 1 = joueur, Couche 2 = ennemis, Couche 3 = objets collectables
